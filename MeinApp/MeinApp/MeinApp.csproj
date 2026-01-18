@@ -23,6 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DataModel\" />
+    <Folder Include="DataModel\DbContext\" />
   </ItemGroup>
 </Project>
