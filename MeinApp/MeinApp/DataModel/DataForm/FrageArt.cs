@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace MeinApp.DataModel.DataForm
 {
-    internal class FrageArt
+    public enum FrageArt
     {
+        unknown=0,
+        Programmier,
+        Datenbank,
+        Netzwerk,
+        USV,
+
+        ProjektManagement,
+        ITSicherheit,
+
     }
 }
