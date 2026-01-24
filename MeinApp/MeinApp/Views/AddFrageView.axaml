@@ -1,0 +1,61 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:MeinApp.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MeinApp.Views.AddFrageView"
+             x:DataType="vm:AddFrageViewModel">
+<Grid RowDefinitions="*,3*,6*,*"
+      Margin="20">
+
+    <!-- Titel oder Kopfbereich (optional) -->
+    <TextBlock Grid.Row="0"
+               Text="Neue Frage"
+               FontSize="22"
+               FontWeight="Bold"
+               VerticalAlignment="Center" />
+
+    <!-- Eingabebereich -->
+    <StackPanel Grid.Row="1"
+                Spacing="15">
+
+        <TextBlock Text="Frage:"/>
+        <TextBox Text="{Binding FrageText}"
+                 Width="600"
+                 AcceptsReturn="True"
+                 Height="180"
+                 Watermark="Frage eingeben..." />
+
+        <TextBlock Text="Antwort:"/>
+        <TextBox Text="{Binding AntwortText}"
+                 Width="700"
+                 AcceptsReturn="True"
+                 Height="280"
+                 Watermark="Antwort eingeben..." />
+
+        <TextBlock Text="Art der Frage:"/>
+        <ComboBox ItemsSource="{Binding FrageArten}"
+                  SelectedItem="{Binding ArtDerFrage}"
+                  Width="200"/>
+    </StackPanel>
+
+    <!-- Speichern-Button unten -->
+    <StackPanel Grid.Row="3" Orientation="Horizontal" Spacing="100">
+    <Button 
+            Content="Speichern"
+            Command="{Binding SpeichernCommand}"
+            HorizontalAlignment="Stretch"
+            Height="45"
+            Background="#4CAF50"
+            Foreground="White"
+            FontSize="18"
+            Margin="0,20,0,0"/>
+        <TextBlock Text="{Binding StatusMessage}"
+                   VerticalAlignment="Center"
+                   FontSize="16"
+                   Foreground="Red"/>
+        </StackPanel>
+</Grid>
+
+</UserControl>
