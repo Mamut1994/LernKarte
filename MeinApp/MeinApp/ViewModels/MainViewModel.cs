@@ -20,4 +20,9 @@ public partial class MainViewModel : ViewModelBase
     {
         CurrentPage= new AddFrageViewModel();
     }
+    [RelayCommand]
+    private void NavigateShow()
+    {
+        CurrentPage= new ShowFrageViewModel();
+    }
 }

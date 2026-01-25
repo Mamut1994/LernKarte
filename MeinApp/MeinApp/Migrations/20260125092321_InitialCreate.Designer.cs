@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MeinApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260124183336_InitialCreate")]
+    [Migration("20260125092321_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -29,8 +29,9 @@ namespace MeinApp.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("ArtDerFrage")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("ArtDerFrage")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("FrageText")
                         .IsRequired()

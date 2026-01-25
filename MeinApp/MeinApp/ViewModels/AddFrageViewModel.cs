@@ -28,6 +28,10 @@ namespace MeinApp.ViewModels
         [RelayCommand]
         private void Speichern()
         {
+            try
+            {
+
+           
             using var dbContext = new DataModel.DBContext.AppDbContext();
 
             if(String.IsNullOrEmpty(FrageText) || String.IsNullOrEmpty(AntwortText))
@@ -44,10 +48,22 @@ namespace MeinApp.ViewModels
             {
                 FrageText = FrageText!,
                 AntwortText = AntwortText!,
-                ArtDerFrage = ArtDerFrage
+                ArtDerFrage =ArtDerFrage
             };
             dbContext.Fragen.Add(neueFrage);
             dbContext.SaveChanges();
+                FrageText = string.Empty;
+                AntwortText = string.Empty;
+              ArtDerFrage = FrageArt.unknown;
+                StatusMessage = "Frage erfolgreich gespeichert.";
+            }
+            catch (Exception ex)
+            {
+                StatusMessage =
+                    $"Fehler beim Speichern der Frage: {ex.Message}" +
+                    (ex.InnerException != null ? $" | Inner: {ex.InnerException.Message}" : "");
+            }
+
         }
     }
 }

@@ -26,8 +26,9 @@ namespace MeinApp.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("ArtDerFrage")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("ArtDerFrage")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("FrageText")
                         .IsRequired()

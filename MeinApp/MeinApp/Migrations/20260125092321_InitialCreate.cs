@@ -18,7 +18,7 @@ namespace MeinApp.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     FrageText = table.Column<string>(type: "TEXT", nullable: false),
                     AntwortText = table.Column<string>(type: "TEXT", nullable: false),
-                    ArtDerFrage = table.Column<int>(type: "INTEGER", nullable: false)
+                    ArtDerFrage = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

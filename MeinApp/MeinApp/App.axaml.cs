@@ -2,10 +2,12 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
-using System.Linq;
 using Avalonia.Markup.Xaml;
+using MeinApp.DataModel.DBContext;
 using MeinApp.ViewModels;
 using MeinApp.Views;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace MeinApp;
 
@@ -15,7 +17,7 @@ public partial class App : Application
     {
         AvaloniaXamlLoader.Load(this);
     }
-
+    
     public override void OnFrameworkInitializationCompleted()
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
@@ -27,6 +29,10 @@ public partial class App : Application
             {
                 DataContext = new MainViewModel()
             };
+            using (var db = new AppDbContext())
+            {
+                db.Database.Migrate(); // oder db.Database.EnsureCreated();
+            }
         }
         else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
