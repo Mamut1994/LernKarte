@@ -15,6 +15,7 @@
                 <StackPanel>
                     <Button Content="Add Frage" Command="{Binding NavigateAddViewCommand}" Margin="0,5"/>
                     <Button Content="Show Frage" Command="{Binding NavigateShowCommand}" Margin="0,5"/>
+                    <Button Content="Show All Frage" Command="{Binding NavigateShowAllCommand}" Margin="0,5"/>
                 </StackPanel>
             </StackPanel>
             

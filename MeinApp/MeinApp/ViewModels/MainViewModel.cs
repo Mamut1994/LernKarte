@@ -25,4 +25,9 @@ public partial class MainViewModel : ViewModelBase
     {
         CurrentPage= new ShowFrageViewModel();
     }
+    [RelayCommand]
+    private void NavigateShowAll()
+    {
+        CurrentPage= new ShowAllFrageViewModel();
+    }
 }

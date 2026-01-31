@@ -27,6 +27,8 @@ namespace MeinApp.DataModel.DataForm
 
         ProjektManagement,
         ITSicherheit,
+        WISO,
+
 
     }
 }

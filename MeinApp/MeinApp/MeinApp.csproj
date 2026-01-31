@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="Avalonia" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" />
     <PackageReference Include="Avalonia.Themes.Fluent" />
     <PackageReference Include="Avalonia.Fonts.Inter" />
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
@@ -26,5 +27,11 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\ShowAllFrageView.axaml.cs">
+      <DependentUpon>ShowAllFrageView.axaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>
