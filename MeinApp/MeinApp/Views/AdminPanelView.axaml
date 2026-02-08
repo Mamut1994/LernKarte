@@ -1,0 +1,34 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:MeinApp.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="vm:AdminPanelViewModel"
+             x:Class="MeinApp.Views.AdminPanelView">
+ 
+
+    <Border Padding="40">
+        <UniformGrid Columns="2" Rows="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20" >
+
+            <Button Classes="CardButton" 
+                    Content="📚  Alle Lernkarten"
+                    />
+
+            <Button Classes="CardButton"
+                    Content="🗂️  Themen"
+                     />
+
+            <Button Classes="CardButton"
+                    Content="❓  Prüfungsfragen" 
+                     />
+
+            <Button Classes="CardButton"
+                    Content="⚙️  Settings" Command="{Binding SettingCommand}" 
+                   />
+
+        </UniformGrid>
+    </Border>
+
+</UserControl>
+
