@@ -17,8 +17,9 @@
                     <Button Content="Show Frage" Command="{Binding NavigateShowCommand}" Margin="0,5"/>
                     <Button Content="Show All Frage" Command="{Binding NavigateShowAllCommand}" Margin="0,5"/>
                 </StackPanel>
+                  <Button Content="Main Page" Command="{Binding MainPageCommand}"  Margin="0,5" />
             </StackPanel>
-            
+          
             </SplitView.Pane>
         <SplitView.Content>
             <ContentControl Content="{Binding CurrentPage}"/>

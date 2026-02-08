@@ -13,7 +13,7 @@ namespace MeinApp.ViewModels
         private ViewModelBase _currentView;
         public MainWindowViewModel()
         {
-           CurrentView=new AdminPanelViewModel();
+           CurrentView=new AdminPanelViewModel(this);
         }
     }
 }

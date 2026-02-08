@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +11,17 @@ namespace MeinApp.ViewModels
 {
     public partial class AdminPanelViewModel:ViewModelBase
     {
-        [ObservableProperty]
-        private ViewModelBase _currentView;
+        private readonly MainWindowViewModel _main; 
+        public AdminPanelViewModel(MainWindowViewModel main)
+        {
+            _main = main;
+        }
 
         [RelayCommand]
         private void Setting()
         {
-            CurrentView =new MainViewModel() ;
+          _main.CurrentView = App.ServiceProvider.GetRequiredService<MainViewModel>();
         }
     }
 }
+
