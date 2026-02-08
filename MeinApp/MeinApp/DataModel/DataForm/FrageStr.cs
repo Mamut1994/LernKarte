@@ -23,12 +23,13 @@ namespace MeinApp.DataModel.DataForm
         Programmier,
         Datenbank,
         Netzwerk,
-        USV,
-
+        
+        ITSystemInfrastruktur,
         ProjektManagement,
         ITSicherheit,
         WISO,
 
-
+        BWL,
+        KundenOrientierung,
     }
 }
