@@ -22,6 +22,11 @@ namespace MeinApp.ViewModels
         {
           _main.CurrentView = App.ServiceProvider.GetRequiredService<MainViewModel>();
         }
+        [RelayCommand]
+        private void AlleKarten()
+        {
+            _main.CurrentView = App.ServiceProvider.GetRequiredService<RandomTestViewModel>();
+        }
     }
 }
 
