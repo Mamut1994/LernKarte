@@ -30,6 +30,6 @@ namespace MeinApp.DataModel.DataForm
         WISO,
 
         BWL,
-        KundenOrientierung,
+        Kundenorientierung,
     }
 }
