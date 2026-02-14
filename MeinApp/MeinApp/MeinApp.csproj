@@ -35,6 +35,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\AlleThemenView.axaml.cs">
+      <DependentUpon>AlleThemenView.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\ShowAllFrageView.axaml.cs">
       <DependentUpon>ShowAllFrageView.axaml</DependentUpon>
     </Compile>

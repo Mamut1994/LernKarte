@@ -34,7 +34,7 @@ public partial class App : Application
             services.AddTransient<AddFrageViewModel>();
             services.AddTransient<ShowAllFrageViewModel>();
             services.AddTransient<ShowFrageViewModel>();
-            services.AddTransient<RandomTestViewModel>();
+            services.AddTransient<AlleThemenViewModel>();
             services.AddTransient<DataModel.DBContext.AppDbContext>();
             ServiceProvider = services.BuildServiceProvider();
             desktop.MainWindow = new MainWindow

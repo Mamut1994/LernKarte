@@ -15,8 +15,9 @@ using System.Windows.Input;
 
 namespace MeinApp.ViewModels
 {
-    public partial class RandomTestViewModel : ViewModelBase
+    public partial class AlleThemenViewModel : ViewModelBase
     {
+        private readonly MainWindowViewModel _main;
         public ObservableCollection<FrageArt> FrageArten { get; } =
             new(Enum.GetValues<FrageArt>().Where(a => a != FrageArt.unknown));
        
@@ -34,9 +35,9 @@ namespace MeinApp.ViewModels
         private List<FrageStr> _aktuelleFragen = new();
         private int _aktuellerIndex;
       
-        public RandomTestViewModel()
+        public AlleThemenViewModel(MainWindowViewModel main)
         {
-        
+            _main = main;
         }
         partial void OnAktuellesThemaChanged(FrageArt value)
         {
@@ -150,6 +151,13 @@ namespace MeinApp.ViewModels
             {
                 FrageText = "erledigt";
             }
+            
+            
+        }
+        [RelayCommand]
+        private void GoAdminPage()
+        { 
+        _main.CurrentView = App.ServiceProvider.GetRequiredService<AdminPanelViewModel>();
         }
     }
 }

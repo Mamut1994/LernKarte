@@ -8,7 +8,7 @@ namespace MeinApp.DataModel.DBContext
     public class AppDbContext : DbContext
     {
         public DbSet<FrageStr> Fragen { get; set; } = null!;
-
+        public DbSet<PrFragen> IhkFragen { get; set; } = null!;
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var folder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
@@ -22,6 +22,12 @@ namespace MeinApp.DataModel.DBContext
             modelBuilder.Entity<FrageStr>()
                 .Property(f => f.ArtDerFrage)
                 .HasConversion<string>(); // Enum → TEXT
+            modelBuilder.Entity<PrFragen>().Property(f => f.Art)
+                .HasConversion<string>(); // Enum → TEXT
+             modelBuilder.Entity<PrFragen>()
+                .Property(f => f.Saison)
+                .HasConversion<string>(); // Enum → TEXT
         }
+
     }
 }

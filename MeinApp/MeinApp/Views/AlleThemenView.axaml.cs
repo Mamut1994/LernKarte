@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace MeinApp.Views;
 
-public partial class RandomTestView : UserControl
+public partial class AlleThemenView : UserControl
 {
-    public RandomTestView()
+    public AlleThemenView()
     {
         InitializeComponent();
     }
